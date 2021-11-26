@@ -10,9 +10,9 @@ class LaneDetector:
         self.right_lines = deque(maxlen=QUEUE_LENGTH)
 
     def process(self, image):
-        white_yellow = select_white_yellow(image)
-        gray         = convert_gray_scale(white_yellow)
-        smooth_gray  = apply_smoothing(gray)
+       # white_yellow = select_white_yellow(image)
+        #gray         = convert_gray_scale(white_yellow)
+        smooth_gray  = apply_smoothing(image)
         edges        = detect_edges(smooth_gray)
         regions      = select_region(edges)
         lines        = hough_lines(regions)
